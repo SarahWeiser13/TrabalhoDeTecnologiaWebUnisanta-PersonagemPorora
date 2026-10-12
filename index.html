@@ -17,8 +17,8 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
 </head>
 
 <body>
@@ -58,11 +58,12 @@
           <span></span> UMA FICHA PARA EXPLORAR
         </p>
 
-        <h1 id="hero-title">Conheça a <em>Porora!</em></h1>
+        <h1 id="hero-title">
+          Conheça a <em>Porora!</em>
+        </h1>
 
         <p>
-          Escolha um dos botões ao redor da Porora
-          para descobrir cada parte da ficha.
+          Escolha um dos botões ao redor da Porora para descobrir cada parte da ficha.
         </p>
       </div>
 
@@ -73,85 +74,119 @@
           id="category-list"
           aria-label="Categorias da ficha"
         >
-          <button
-            class="category-button active"
+
+          <button class="category-button active"
             data-category="identidade"
             aria-expanded="true"
-            aria-controls="info-panel"
-          >
+            aria-controls="info-panel">
             <span class="category-icon">🪪</span>
             <span>Identidade</span>
             <span class="category-arrow">↗</span>
           </button>
 
-          <button class="category-button" data-category="atributos" aria-expanded="false" aria-controls="info-panel">
+          <button class="category-button"
+            data-category="atributos"
+            aria-expanded="false"
+            aria-controls="info-panel">
             <span class="category-icon">⭐</span>
             <span>Atributos</span>
             <span class="category-arrow">↗</span>
           </button>
 
-          <button class="category-button" data-category="pericias" aria-expanded="false" aria-controls="info-panel">
+          <button class="category-button"
+            data-category="pericias"
+            aria-expanded="false"
+            aria-controls="info-panel">
             <span class="category-icon">🧭</span>
             <span>Perícias</span>
             <span class="category-arrow">↗</span>
           </button>
 
-          <button class="category-button" data-category="conhecimentos" aria-expanded="false" aria-controls="info-panel">
+          <button class="category-button"
+            data-category="conhecimentos"
+            aria-expanded="false"
+            aria-controls="info-panel">
             <span class="category-icon">📚</span>
             <span>Conhecimentos</span>
             <span class="category-arrow">↗</span>
           </button>
 
-          <button class="category-button" data-category="vantagens" aria-expanded="false" aria-controls="info-panel">
+          <button class="category-button"
+            data-category="vantagens"
+            aria-expanded="false"
+            aria-controls="info-panel">
             <span class="category-icon">💛</span>
             <span>Vantagens</span>
             <span class="category-arrow">↗</span>
           </button>
 
-          <button class="category-button" data-category="desvantagens" aria-expanded="false" aria-controls="info-panel">
+          <button class="category-button"
+            data-category="desvantagens"
+            aria-expanded="false"
+            aria-controls="info-panel">
             <span class="category-icon">🌨️</span>
             <span>Desvantagens</span>
             <span class="category-arrow">↗</span>
           </button>
 
-          <button class="category-button" data-category="habilidades" aria-expanded="false" aria-controls="info-panel">
+          <button class="category-button"
+            data-category="habilidades"
+            aria-expanded="false"
+            aria-controls="info-panel">
             <span class="category-icon">🏔️</span>
             <span>Habilidades especiais</span>
             <span class="category-arrow">↗</span>
           </button>
 
-          <button class="category-button" data-category="passivos" aria-expanded="false" aria-controls="info-panel">
+          <button class="category-button"
+            data-category="passivos"
+            aria-expanded="false"
+            aria-controls="info-panel">
             <span class="category-icon">❄️</span>
             <span>Poderes passivos</span>
             <span class="category-arrow">↗</span>
           </button>
 
-          <button class="category-button" data-category="ativos" aria-expanded="false" aria-controls="info-panel">
+          <button class="category-button"
+            data-category="ativos"
+            aria-expanded="false"
+            aria-controls="info-panel">
             <span class="category-icon">⚡</span>
             <span>Poderes ativos</span>
             <span class="category-arrow">↗</span>
           </button>
 
-          <button class="category-button" data-category="historia" aria-expanded="false" aria-controls="info-panel">
+          <button class="category-button"
+            data-category="historia"
+            aria-expanded="false"
+            aria-controls="info-panel">
             <span class="category-icon">📖</span>
             <span>História</span>
             <span class="category-arrow">↗</span>
           </button>
 
-          <button class="category-button" data-category="missao" aria-expanded="false" aria-controls="info-panel">
+          <button class="category-button"
+            data-category="missao"
+            aria-expanded="false"
+            aria-controls="info-panel">
             <span class="category-icon">🚩</span>
             <span>Missão principal</span>
             <span class="category-arrow">↗</span>
           </button>
 
-          <button class="category-button" data-category="frase" aria-expanded="false" aria-controls="info-panel">
+          <button class="category-button"
+            data-category="frase"
+            aria-expanded="false"
+            aria-controls="info-panel">
             <span class="category-icon">💬</span>
             <span>Frase da Porora</span>
             <span class="category-arrow">↗</span>
           </button>
+
         </div>
 
         <div class="character-stage" aria-label="Porora no centro da ficha">
+
           <div class="orbit orbit-one"></div>
           <div class="orbit orbit-two"></div>
 
@@ -161,10 +196,10 @@
 
           <div class="character-halo"></div>
 
-          <!-- Imagem da Porora -->
+          <!-- Imagem da Porora: link direto para o arquivo -->
           <img
             class="character-image"
-            src="./assets/porora.jpeg"
+            src="https://raw.githubusercontent.com/SarahWeiser13/TrabalhoDeTecnologiaWebUnisanta-PersonagemPorora/main/assets/porora.jpeg"
             alt="Porora, a personagem da ficha"
           >
 
@@ -172,20 +207,22 @@
             <span class="status-dot"></span>
             Escolha uma categoria!
           </div>
-        </div>
 
+        </div>
       </div>
 
       <section
         class="info-section"
         aria-label="Informações da categoria selecionada"
       >
+
         <div
           class="info-panel"
           id="info-panel"
           aria-live="polite"
           aria-atomic="true"
         >
+
           <div class="panel-topline">
             <span class="panel-kicker" id="panel-kicker">
               01 / QUEM SOU EU
@@ -195,22 +232,544 @@
           </div>
 
           <div id="panel-content"></div>
-        </div>
-      </section>
 
+        </div>
+
+      </section>
     </section>
   </main>
 
   <footer class="site-footer">
+
     <div class="footer-brand">
       <span class="footer-star">✳</span>
       <strong>Porora</strong>
     </div>
 
-    <small>© 2026 Porora — Todos os direitos reservados.</small>
+    <small>
+      © 2026 Porora — Todos os direitos reservados.
+    </small>
+
   </footer>
 
   <div class="bottom-stripe"></div>
+
+</body>
+</html>
+``````html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f0c15f">
+  <meta name="description" content="Explore a ficha interativa da Porora.">
+
+  <title>Porora — Ficha Interativa</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+
+<body>
+  <div class="top-stripe"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Porora, início">
+      <span class="brand-mark" aria-hidden="true">❄</span>
+      <span>
+        <strong>Porora</strong>
+        <small>ficha interativa</small>
+      </span>
+    </a>
+
+    <nav class="header-actions" aria-label="Links principais">
+      <a class="header-link contact-link" href="mailto:aweisersarah@gmail.com">
+        ✉ <span>Nos contate</span>
+      </a>
+
+      <a
+        class="header-link github-link"
+        id="github-link"
+        href="https://github.com/SarahWeiser13/TrabalhoDeTecnologiaWebUnisanta-PersonagemPorora"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ↗ <span>Ver projeto no GitHub</span>
+      </a>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="interactive-section" aria-labelledby="hero-title">
+
+      <div class="intro-heading">
+        <p class="eyebrow">
+          <span></span> UMA FICHA PARA EXPLORAR
+        </p>
+
+        <h1 id="hero-title">
+          Conheça a <em>Porora!</em>
+        </h1>
+
+        <p>
+          Escolha um dos botões ao redor da Porora para descobrir cada parte da ficha.
+        </p>
+      </div>
+
+      <div class="orbit-layout">
+
+        <div
+          class="category-list"
+          id="category-list"
+          aria-label="Categorias da ficha"
+        >
+
+          <button class="category-button active"
+            data-category="identidade"
+            aria-expanded="true"
+            aria-controls="info-panel">
+            <span class="category-icon">🪪</span>
+            <span>Identidade</span>
+            <span class="category-arrow">↗</span>
+          </button>
+
+          <button class="category-button"
+            data-category="atributos"
+            aria-expanded="false"
+            aria-controls="info-panel">
+            <span class="category-icon">⭐</span>
+            <span>Atributos</span>
+            <span class="category-arrow">↗</span>
+          </button>
+
+          <button class="category-button"
+            data-category="pericias"
+            aria-expanded="false"
+            aria-controls="info-panel">
+            <span class="category-icon">🧭</span>
+            <span>Perícias</span>
+            <span class="category-arrow">↗</span>
+          </button>
+
+          <button class="category-button"
+            data-category="conhecimentos"
+            aria-expanded="false"
+            aria-controls="info-panel">
+            <span class="category-icon">📚</span>
+            <span>Conhecimentos</span>
+            <span class="category-arrow">↗</span>
+          </button>
+
+          <button class="category-button"
+            data-category="vantagens"
+            aria-expanded="false"
+            aria-controls="info-panel">
+            <span class="category-icon">💛</span>
+            <span>Vantagens</span>
+            <span class="category-arrow">↗</span>
+          </button>
+
+          <button class="category-button"
+            data-category="desvantagens"
+            aria-expanded="false"
+            aria-controls="info-panel">
+            <span class="category-icon">🌨️</span>
+            <span>Desvantagens</span>
+            <span class="category-arrow">↗</span>
+          </button>
+
+          <button class="category-button"
+            data-category="habilidades"
+            aria-expanded="false"
+            aria-controls="info-panel">
+            <span class="category-icon">🏔️</span>
+            <span>Habilidades especiais</span>
+            <span class="category-arrow">↗</span>
+          </button>
+
+          <button class="category-button"
+            data-category="passivos"
+            aria-expanded="false"
+            aria-controls="info-panel">
+            <span class="category-icon">❄️</span>
+            <span>Poderes passivos</span>
+            <span class="category-arrow">↗</span>
+          </button>
+
+          <button class="category-button"
+            data-category="ativos"
+            aria-expanded="false"
+            aria-controls="info-panel">
+            <span class="category-icon">⚡</span>
+            <span>Poderes ativos</span>
+            <span class="category-arrow">↗</span>
+          </button>
+
+          <button class="category-button"
+            data-category="historia"
+            aria-expanded="false"
+            aria-controls="info-panel">
+            <span class="category-icon">📖</span>
+            <span>História</span>
+            <span class="category-arrow">↗</span>
+          </button>
+
+          <button class="category-button"
+            data-category="missao"
+            aria-expanded="false"
+            aria-controls="info-panel">
+            <span class="category-icon">🚩</span>
+            <span>Missão principal</span>
+            <span class="category-arrow">↗</span>
+          </button>
+
+          <button class="category-button"
+            data-category="frase"
+            aria-expanded="false"
+            aria-controls="info-panel">
+            <span class="category-icon">💬</span>
+            <span>Frase da Porora</span>
+            <span class="category-arrow">↗</span>
+          </button>
+
+        </div>
+
+        <div class="character-stage" aria-label="Porora no centro da ficha">
+
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+
+          <span class="sparkle sparkle-one" aria-hidden="true">✦</span>
+          <span class="sparkle sparkle-two" aria-hidden="true">❄</span>
+          <span class="sparkle sparkle-three" aria-hidden="true">✧</span>
+
+          <div class="character-halo"></div>
+
+          <!-- Imagem da Porora: link direto para o arquivo -->
+          <img
+            class="character-image"
+            src="https://raw.githubusercontent.com/SarahWeiser13/TrabalhoDeTecnologiaWebUnisanta-PersonagemPorora/main/assets/porora.jpeg"
+            alt="Porora, a personagem da ficha"
+          >
+
+          <div class="character-label">
+            <span class="status-dot"></span>
+            Escolha uma categoria!
+          </div>
+
+        </div>
+      </div>
+
+      <section
+        class="info-section"
+        aria-label="Informações da categoria selecionada"
+      >
+
+        <div
+          class="info-panel"
+          id="info-panel"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <div class="panel-topline">
+            <span class="panel-kicker" id="panel-kicker">
+              01 / QUEM SOU EU
+            </span>
+
+            <span class="panel-snowflake">✳</span>
+          </div>
+
+          <div id="panel-content"></div>
+
+        </div>
+
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+
+    <div class="footer-brand">
+      <span class="footer-star">✳</span>
+      <strong>Porora</strong>
+    </div>
+
+    <small>
+      © 2026 Porora — Todos os direitos reservados.
+    </small>
+
+  </footer>
+
+  <div class="bottom-stripe"></div>
+
+</body>
+</html>
+``````html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f0c15f">
+  <meta name="description" content="Explore a ficha interativa da Porora.">
+
+  <title>Porora — Ficha Interativa</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+
+<body>
+  <div class="top-stripe"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Porora, início">
+      <span class="brand-mark" aria-hidden="true">❄</span>
+      <span>
+        <strong>Porora</strong>
+        <small>ficha interativa</small>
+      </span>
+    </a>
+
+    <nav class="header-actions" aria-label="Links principais">
+      <a class="header-link contact-link" href="mailto:aweisersarah@gmail.com">
+        ✉ <span>Nos contate</span>
+      </a>
+
+      <a
+        class="header-link github-link"
+        id="github-link"
+        href="https://github.com/SarahWeiser13/TrabalhoDeTecnologiaWebUnisanta-PersonagemPorora"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ↗ <span>Ver projeto no GitHub</span>
+      </a>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="interactive-section" aria-labelledby="hero-title">
+
+      <div class="intro-heading">
+        <p class="eyebrow">
+          <span></span> UMA FICHA PARA EXPLORAR
+        </p>
+
+        <h1 id="hero-title">
+          Conheça a <em>Porora!</em>
+        </h1>
+
+        <p>
+          Escolha um dos botões ao redor da Porora para descobrir cada parte da ficha.
+        </p>
+      </div>
+
+      <div class="orbit-layout">
+
+        <div
+          class="category-list"
+          id="category-list"
+          aria-label="Categorias da ficha"
+        >
+
+          <button class="category-button active"
+            data-category="identidade"
+            aria-expanded="true"
+            aria-controls="info-panel">
+            <span class="category-icon">🪪</span>
+            <span>Identidade</span>
+            <span class="category-arrow">↗</span>
+          </button>
+
+          <button class="category-button"
+            data-category="atributos"
+            aria-expanded="false"
+            aria-controls="info-panel">
+            <span class="category-icon">⭐</span>
+            <span>Atributos</span>
+            <span class="category-arrow">↗</span>
+          </button>
+
+          <button class="category-button"
+            data-category="pericias"
+            aria-expanded="false"
+            aria-controls="info-panel">
+            <span class="category-icon">🧭</span>
+            <span>Perícias</span>
+            <span class="category-arrow">↗</span>
+          </button>
+
+          <button class="category-button"
+            data-category="conhecimentos"
+            aria-expanded="false"
+            aria-controls="info-panel">
+            <span class="category-icon">📚</span>
+            <span>Conhecimentos</span>
+            <span class="category-arrow">↗</span>
+          </button>
+
+          <button class="category-button"
+            data-category="vantagens"
+            aria-expanded="false"
+            aria-controls="info-panel">
+            <span class="category-icon">💛</span>
+            <span>Vantagens</span>
+            <span class="category-arrow">↗</span>
+          </button>
+
+          <button class="category-button"
+            data-category="desvantagens"
+            aria-expanded="false"
+            aria-controls="info-panel">
+            <span class="category-icon">🌨️</span>
+            <span>Desvantagens</span>
+            <span class="category-arrow">↗</span>
+          </button>
+
+          <button class="category-button"
+            data-category="habilidades"
+            aria-expanded="false"
+            aria-controls="info-panel">
+            <span class="category-icon">🏔️</span>
+            <span>Habilidades especiais</span>
+            <span class="category-arrow">↗</span>
+          </button>
+
+          <button class="category-button"
+            data-category="passivos"
+            aria-expanded="false"
+            aria-controls="info-panel">
+            <span class="category-icon">❄️</span>
+            <span>Poderes passivos</span>
+            <span class="category-arrow">↗</span>
+          </button>
+
+          <button class="category-button"
+            data-category="ativos"
+            aria-expanded="false"
+            aria-controls="info-panel">
+            <span class="category-icon">⚡</span>
+            <span>Poderes ativos</span>
+            <span class="category-arrow">↗</span>
+          </button>
+
+          <button class="category-button"
+            data-category="historia"
+            aria-expanded="false"
+            aria-controls="info-panel">
+            <span class="category-icon">📖</span>
+            <span>História</span>
+            <span class="category-arrow">↗</span>
+          </button>
+
+          <button class="category-button"
+            data-category="missao"
+            aria-expanded="false"
+            aria-controls="info-panel">
+            <span class="category-icon">🚩</span>
+            <span>Missão principal</span>
+            <span class="category-arrow">↗</span>
+          </button>
+
+          <button class="category-button"
+            data-category="frase"
+            aria-expanded="false"
+            aria-controls="info-panel">
+            <span class="category-icon">💬</span>
+            <span>Frase da Porora</span>
+            <span class="category-arrow">↗</span>
+          </button>
+
+        </div>
+
+        <div class="character-stage" aria-label="Porora no centro da ficha">
+
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+
+          <span class="sparkle sparkle-one" aria-hidden="true">✦</span>
+          <span class="sparkle sparkle-two" aria-hidden="true">❄</span>
+          <span class="sparkle sparkle-three" aria-hidden="true">✧</span>
+
+          <div class="character-halo"></div>
+
+          <!-- Imagem da Porora: link direto para o arquivo -->
+          <img
+            class="character-image"
+            src="https://raw.githubusercontent.com/SarahWeiser13/TrabalhoDeTecnologiaWebUnisanta-PersonagemPorora/main/assets/porora.jpeg"
+            alt="Porora, a personagem da ficha"
+          >
+
+          <div class="character-label">
+            <span class="status-dot"></span>
+            Escolha uma categoria!
+          </div>
+
+        </div>
+      </div>
+
+      <section
+        class="info-section"
+        aria-label="Informações da categoria selecionada"
+      >
+
+        <div
+          class="info-panel"
+          id="info-panel"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <div class="panel-topline">
+            <span class="panel-kicker" id="panel-kicker">
+              01 / QUEM SOU EU
+            </span>
+
+            <span class="panel-snowflake">✳</span>
+          </div>
+
+          <div id="panel-content"></div>
+
+        </div>
+
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+
+    <div class="footer-brand">
+      <span class="footer-star">✳</span>
+      <strong>Porora</strong>
+    </div>
+
+    <small>
+      © 2026 Porora — Todos os direitos reservados.
+    </small>
+
+  </footer>
+
+  <div class="bottom-stripe"></div>
+
 </body>
 </html>
 ```
