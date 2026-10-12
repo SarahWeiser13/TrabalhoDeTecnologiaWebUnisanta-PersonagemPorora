@@ -11,7 +11,11 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
@@ -34,9 +38,13 @@
         ✉ <span>Nos contate</span>
       </a>
 
-      <a class="header-link github-link" id="github-link"
-         href="https://github.com/" target="_blank"
-         rel="noopener noreferrer">
+      <a
+        class="header-link github-link"
+        id="github-link"
+        href="https://github.com/SarahWeiser13/TrabalhoDeTecnologiaWebUnisanta-PersonagemPorora"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         ↗ <span>Ver projeto no GitHub</span>
       </a>
     </nav>
@@ -53,15 +61,24 @@
         <h1 id="hero-title">Conheça a <em>Porora!</em></h1>
 
         <p>
-          Escolha um dos botões ao redor da Porora para descobrir cada parte da ficha.
+          Escolha um dos botões ao redor da Porora
+          para descobrir cada parte da ficha.
         </p>
       </div>
 
       <div class="orbit-layout">
 
-        <div class="category-list" id="category-list" aria-label="Categorias da ficha">
-
-          <button class="category-button active" data-category="identidade" aria-expanded="true" aria-controls="info-panel">
+        <div
+          class="category-list"
+          id="category-list"
+          aria-label="Categorias da ficha"
+        >
+          <button
+            class="category-button active"
+            data-category="identidade"
+            aria-expanded="true"
+            aria-controls="info-panel"
+          >
             <span class="category-icon">🪪</span>
             <span>Identidade</span>
             <span class="category-arrow">↗</span>
@@ -132,11 +149,9 @@
             <span>Frase da Porora</span>
             <span class="category-arrow">↗</span>
           </button>
-
         </div>
 
         <div class="character-stage" aria-label="Porora no centro da ficha">
-
           <div class="orbit orbit-one"></div>
           <div class="orbit orbit-two"></div>
 
@@ -146,34 +161,40 @@
 
           <div class="character-halo"></div>
 
-          <!-- IMAGEM DA PORORA -->
+          <!-- Imagem da Porora -->
           <img
             class="character-image"
             src="./assets/porora.jpeg"
             alt="Porora, a personagem da ficha"
-            loading="eager"
-            onerror="this.onerror=null; this.alt='Não foi possível carregar a imagem. Verifique o arquivo assets/porora.jpeg.';"
           >
 
           <div class="character-label">
             <span class="status-dot"></span>
             Escolha uma categoria!
           </div>
-
         </div>
+
       </div>
 
-      <section class="info-section" aria-label="Informações da categoria selecionada">
-
-        <div class="info-panel" id="info-panel" aria-live="polite" aria-atomic="true">
-
+      <section
+        class="info-section"
+        aria-label="Informações da categoria selecionada"
+      >
+        <div
+          class="info-panel"
+          id="info-panel"
+          aria-live="polite"
+          aria-atomic="true"
+        >
           <div class="panel-topline">
-            <span class="panel-kicker" id="panel-kicker">01 / QUEM SOU EU</span>
+            <span class="panel-kicker" id="panel-kicker">
+              01 / QUEM SOU EU
+            </span>
+
             <span class="panel-snowflake">✳</span>
           </div>
 
           <div id="panel-content"></div>
-
         </div>
       </section>
 
