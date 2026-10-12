@@ -1,0 +1,211 @@
+const GITHUB_REPOSITORY = "";
+
+const characterData = {
+  identidade: {
+    kicker: "01 / QUEM SOU EU",
+    title: "Identidade",
+    intro: "Toda grande aventura começa conhecendo quem está pronta para vivê-la.",
+    type: "identity",
+    fields: [
+      ["Nome", "Porora"],
+      ["Sexo", "Feminino"],
+      ["Espécie", "Pinguim"],
+      ["Classe", "Exploradora"],
+      ["Origem", "Vila Porong Porong"],
+      ["Idade", "8 anos (aprox.)"],
+      ["Personalidade", "Alegre, curiosa, corajosa, criativa, determinada e muito amiga."]
+    ]
+  },
+  atributos: {
+    kicker: "02 / O QUE ME MOVE",
+    title: "Atributos",
+    intro: "As características que ajudam Porora a enfrentar desafios e descobrir coisas novas.",
+    type: "stats",
+    items: [
+      ["Curiosidade", 10, "⭐"], ["Coragem", 8, "💪"], ["Criatividade", 9, "💡"],
+      ["Amizade", 10, "💗"], ["Paciência", 7, "🌱"]
+    ]
+  },
+  pericias: {
+    kicker: "03 / O QUE SEI FAZER",
+    title: "Perícias",
+    intro: "Porora desenvolveu estas habilidades ao explorar novos lugares e trabalhar em equipe.",
+    type: "stats",
+    items: [
+      ["Exploração", 10, "🏔️"], ["Navegação", 9, "🗺️"], ["Observação", 9, "🔭"],
+      ["Trabalho em equipe", 10, "👥"], ["Sobrevivência", 8, "🔥"], ["Resolução de problemas", 9, "🧩"]
+    ]
+  },
+  conhecimentos: {
+    kicker: "04 / O QUE JÁ DESCOBRI",
+    title: "Conhecimentos",
+    intro: "Cada passeio é uma oportunidade para aprender algo sobre o mundo ao redor.",
+    type: "stats",
+    items: [
+      ["Natureza", 9, "🌿"], ["Geografia", 8, "🌎"], ["Animais", 9, "🐾"],
+      ["Clima", 9, "❄️"], ["Vila Porong Porong", 10, "🏡"]
+    ]
+  },
+  vantagens: {
+    kicker: "05 / MEUS PONTOS FORTES",
+    title: "Vantagens",
+    intro: "Qualidades que fazem de Porora uma ótima companheira de aventuras.",
+    type: "list",
+    items: [
+      ["Curiosa", "Está sempre fazendo perguntas e procurando aprender.", "🧭"],
+      ["Corajosa", "Enfrenta desafios mesmo quando sente um friozinho na barriga.", "🛡️"],
+      ["Criativa", "Encontra soluções diferentes quando surge um problema.", "💡"],
+      ["Amiga dos animais", "Trata os animais com carinho e respeito.", "🐾"],
+      ["Trabalho em equipe", "Acredita que juntos é possível ir mais longe.", "👥"]
+    ]
+  },
+  desvantagens: {
+    kicker: "06 / O QUE AINDA POSSO APRENDER",
+    title: "Desvantagens",
+    intro: "Até uma exploradora corajosa tem desafios para superar. Estes pontos deixam a personagem mais humana e ajudam suas histórias a crescer.",
+    type: "list",
+    items: [
+      ["Curiosidade que fala mais alto", "Às vezes, Porora se empolga tanto com uma descoberta que pode se distrair do caminho principal.", "🔎"],
+      ["Impulsividade", "Quando aparece algo muito interessante, pode querer agir antes de planejar todos os passos.", "💨"],
+      ["Teimosia", "Quando acredita muito em uma ideia, pode demorar para ouvir outras opiniões ou admitir que precisa mudar de estratégia.", "🪨"],
+      ["Dificuldade em dizer não", "Por gostar muito dos amigos, pode assumir tarefas demais para tentar ajudar todo mundo.", "💗"],
+      ["Confia com facilidade", "Seu jeito acolhedor pode fazer com que confie nas pessoas antes de conhecê-las bem.", "🤝"],
+      ["Dificuldade em pedir ajuda", "Às vezes, tenta resolver tudo sozinha para não preocupar os outros, mesmo quando uma mão amiga faria diferença.", "🎒"],
+      ["Distração", "Novidades e pequenos detalhes chamam sua atenção, fazendo com que perca o foco por alguns instantes.", "🦋"],
+      ["Medo de decepcionar", "Por se importar muito com quem ama, pode cobrar demais de si mesma quando algo não sai como esperava.", "💭"],
+      ["Pouca experiência", "Ainda está aprendendo a lidar com situações realmente difíceis e pode precisar de orientação.", "🌱"],
+      ["Frio intenso", "Como qualquer aventureira, precisa se preparar bem para enfrentar condições climáticas extremas.", "❄️"]
+    ],
+    note: "Observação: estas desvantagens foram criadas como sugestões iniciais para completar a ficha, pois não estavam especificadas no modelo preenchido. Você pode editar ou remover qualquer item no arquivo script.js."
+  },
+  habilidades: {
+    kicker: "07 / TALENTOS ESPECIAIS",
+    title: "Habilidades especiais",
+    intro: "Recursos que ajudam Porora a explorar, se adaptar e cuidar de quem está com ela.",
+    type: "list",
+    items: [
+      ["Instinto explorador", "Encontra caminhos e descobre lugares desconhecidos.", "🧭"],
+      ["Adaptação ao gelo", "Consegue se movimentar com facilidade em ambientes de neve e gelo.", "❄️"],
+      ["Ideia brilhante", "Encontra soluções criativas quando aparece um problema.", "💡"],
+      ["Laço de amizade", "Consegue motivar e ajudar seus amigos durante uma aventura.", "💗"],
+      ["Kit de aventura", "Carrega objetos e ferramentas úteis para suas explorações.", "🎒"]
+    ]
+  },
+  passivos: {
+    kicker: "08 / SEM PRECISAR ATIVAR",
+    title: "Poderes passivos",
+    intro: "Características que acompanham Porora naturalmente durante suas aventuras.",
+    type: "list",
+    items: [
+      ["Resistência ao frio", "Suporta baixas temperaturas com facilidade.", "❄️"],
+      ["Espírito aventureiro", "Está sempre buscando novos desafios.", "🏔️"],
+      ["Amizade contagiante", "Torna os arredores mais felizes e confiantes.", "💗"],
+      ["Olhar curioso", "Percebe detalhes que outras pessoas podem não notar.", "👁️"]
+    ]
+  },
+  ativos: {
+    kicker: "09 / HORA DE AGIR",
+    title: "Poderes ativos",
+    intro: "Ações especiais que Porora pode colocar em prática quando uma aventura pede iniciativa.",
+    type: "list",
+    items: [
+      ["Exploração rápida", "Move-se com agilidade para investigar novos lugares.", "🧭"],
+      ["Ideia brilhante", "Usa a criatividade para resolver um desafio importante.", "💡"],
+      ["Chamado dos amigos", "Reúne os amigos quando alguém precisa de ajuda.", "👥"],
+      ["Descoberta surpresa", "Encontra uma pista ou um lugar especial pelo caminho.", "⭐"]
+    ]
+  },
+  historia: {
+    kicker: "10 / ERA UMA VEZ…",
+    title: "História da Porora",
+    intro: "Toda exploradora tem um lugar para chamar de lar — e muitos caminhos esperando para serem descobertos.",
+    type: "story",
+    text: "Porora nasceu na pacata Vila Porong Porong, cercada por montanhas de gelo e um mar de possibilidades. Desde pequena, sempre foi diferente: enquanto outros pinguins sonhavam em ficar na vila, ela olhava para o horizonte e se perguntava o que existia além das montanhas.\n\nCom seu mapa, sua mochila e um coração enorme, Porora começou a explorar o mundo, conhecendo novos lugares, animais e culturas. Durante uma de suas viagens, descobriu que o que mais ama não é só a aventura, mas também as pessoas que encontra pelo caminho.\n\nHoje, ela continua explorando, aprendendo e colecionando histórias, sempre com um sorriso no rosto e o mesmo sonho de menina: ver tudo o que existe do mundo e fazer novas amizades pelo caminho."
+  },
+  missao: {
+    kicker: "11 / MEU GRANDE OBJETIVO",
+    title: "Missão principal",
+    intro: "O que faz Porora calçar as botas, pegar a mochila e seguir em frente.",
+    type: "mission",
+    text: "Explorar novos lugares, superar desafios e viver grandes aventuras ao lado dos amigos."
+  },
+  frase: {
+    kicker: "12 / MINHA FRASE",
+    title: "Frase da Porora",
+    intro: "Uma frase para lembrar que sempre existe algo novo esperando por nós.",
+    type: "quote",
+    text: "Vamos descobrir o que existe por aí!"
+  }
+};
+
+const categoryButtons = [...document.querySelectorAll('.category-button')];
+const panelContent = document.getElementById('panel-content');
+const panelKicker = document.getElementById('panel-kicker');
+const githubLink = document.getElementById('github-link');
+
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, character => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  })[character]);
+}
+
+function renderIdentity(data) {
+  return `<div class="fade-in"><h3 class="panel-title">${escapeHTML(data.title)}</h3><p class="panel-intro">${escapeHTML(data.intro)}</p><dl class="identity-grid">${data.fields.map(([label, value]) => `<div class="data-item"><dt>${escapeHTML(label)}</dt><dd>${escapeHTML(value)}</dd></div>`).join('')}</dl></div>`;
+}
+
+function renderStats(data) {
+  return `<div class="fade-in"><h3 class="panel-title">${escapeHTML(data.title)}</h3><p class="panel-intro">${escapeHTML(data.intro)}</p><div class="stat-list">${data.items.map(([name, value, icon]) => `<div class="stat-row"><span class="stat-name">${escapeHTML(icon)} ${escapeHTML(name)}</span><div class="stat-track" role="img" aria-label="${escapeHTML(name)}: ${value} de 10"><div class="stat-fill" style="--value:${Math.max(0, Math.min(10, Number(value))) * 10}%"></div></div><span class="stat-value">${escapeHTML(value)}/10</span></div>`).join('')}</div></div>`;
+}
+
+function renderList(data) {
+  const items = data.items.map(([title, description, icon]) => `<div class="content-item"><span class="item-symbol" aria-hidden="true">${escapeHTML(icon)}</span><div><h4>${escapeHTML(title)}</h4><p>${escapeHTML(description)}</p></div></div>`).join('');
+  const note = data.note ? `<p class="panel-intro" style="margin-top:16px;font-size:11px">${escapeHTML(data.note)}</p>` : '';
+  return `<div class="fade-in"><h3 class="panel-title">${escapeHTML(data.title)}</h3><p class="panel-intro">${escapeHTML(data.intro)}</p><div class="content-list">${items}</div>${note}</div>`;
+}
+
+function renderStory(data) {
+  const paragraphs = data.text.split('\n\n').map(paragraph => `<p>${escapeHTML(paragraph)}</p>`).join('');
+  return `<div class="fade-in"><h3 class="panel-title">${escapeHTML(data.title)}</h3><p class="panel-intro">${escapeHTML(data.intro)}</p><div class="story-copy">${paragraphs}</div></div>`;
+}
+
+function renderMission(data) {
+  return `<div class="fade-in"><h3 class="panel-title">${escapeHTML(data.title)}</h3><p class="panel-intro">${escapeHTML(data.intro)}</p><div class="mission-card">${escapeHTML(data.text)}</div></div>`;
+}
+
+function renderQuote(data) {
+  return `<div class="fade-in"><h3 class="panel-title">${escapeHTML(data.title)}</h3><p class="panel-intro">${escapeHTML(data.intro)}</p><div class="mission-card">${escapeHTML(data.text)}</div></div>`;
+}
+
+function selectCategory(key) {
+  const data = characterData[key];
+  if (!data) return;
+  categoryButtons.forEach(button => {
+    const selected = button.dataset.category === key;
+    button.classList.toggle('active', selected);
+    button.setAttribute('aria-expanded', String(selected));
+  });
+  panelKicker.textContent = data.kicker;
+  const renderers = {
+    identity: renderIdentity,
+    stats: renderStats,
+    list: renderList,
+    story: renderStory,
+    mission: renderMission,
+    quote: renderQuote
+  };
+  panelContent.innerHTML = (renderers[data.type] || renderList)(data);
+}
+
+categoryButtons.forEach(button => button.addEventListener('click', () => selectCategory(button.dataset.category)));
+
+if (GITHUB_REPOSITORY.trim()) {
+  githubLink.href = GITHUB_REPOSITORY;
+} else {
+  githubLink.href = 'https://github.com/';
+  githubLink.addEventListener('click', event => {
+    event.preventDefault();
+    alert('Para configurar este botão, abra o arquivo script.js e coloque a URL do seu repositório na variável GITHUB_REPOSITORY.');
+  });
+}
+
+selectCategory('identidade');
