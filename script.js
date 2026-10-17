@@ -1,4 +1,5 @@
-const GITHUB_REPOSITORY = "";
+
+const GITHUB_REPOSITORY = "https://github.com/SarahWeiser13/TrabalhoDeTecnologiaWebUnisanta-PersonagemPorora";
 
 const characterData = {
   identidade: {
@@ -16,36 +17,50 @@ const characterData = {
       ["Personalidade", "Alegre, curiosa, corajosa, criativa, determinada e muito amiga."]
     ]
   },
+
   atributos: {
     kicker: "02 / O QUE ME MOVE",
     title: "Atributos",
     intro: "As características que ajudam Porora a enfrentar desafios e descobrir coisas novas.",
     type: "stats",
     items: [
-      ["Curiosidade", 10, "⭐"], ["Coragem", 8, "💪"], ["Criatividade", 9, "💡"],
-      ["Amizade", 10, "💗"], ["Paciência", 7, "🌱"]
+      ["Curiosidade", 10, "⭐"],
+      ["Coragem", 8, "💪"],
+      ["Criatividade", 9, "💡"],
+      ["Amizade", 10, "💗"],
+      ["Paciência", 7, "🌱"]
     ]
   },
+
   pericias: {
     kicker: "03 / O QUE SEI FAZER",
     title: "Perícias",
     intro: "Porora desenvolveu estas habilidades ao explorar novos lugares e trabalhar em equipe.",
     type: "stats",
     items: [
-      ["Exploração", 10, "🏔️"], ["Navegação", 9, "🗺️"], ["Observação", 9, "🔭"],
-      ["Trabalho em equipe", 10, "👥"], ["Sobrevivência", 8, "🔥"], ["Resolução de problemas", 9, "🧩"]
+      ["Exploração", 10, "🏔️"],
+      ["Navegação", 9, "🗺️"],
+      ["Observação", 9, "🔭"],
+      ["Trabalho em equipe", 10, "👥"],
+      ["Sobrevivência", 8, "🔥"],
+      ["Resolução de problemas", 9, "🧩"]
     ]
   },
+
   conhecimentos: {
     kicker: "04 / O QUE JÁ DESCOBRI",
     title: "Conhecimentos",
     intro: "Cada passeio é uma oportunidade para aprender algo sobre o mundo ao redor.",
     type: "stats",
     items: [
-      ["Natureza", 9, "🌿"], ["Geografia", 8, "🌎"], ["Animais", 9, "🐾"],
-      ["Clima", 9, "❄️"], ["Vila Porong Porong", 10, "🏡"]
+      ["Natureza", 9, "🌿"],
+      ["Geografia", 8, "🌎"],
+      ["Animais", 9, "🐾"],
+      ["Clima", 9, "❄️"],
+      ["Vila Porong Porong", 10, "🏡"]
     ]
   },
+
   vantagens: {
     kicker: "05 / MEUS PONTOS FORTES",
     title: "Vantagens",
@@ -59,6 +74,7 @@ const characterData = {
       ["Trabalho em equipe", "Acredita que juntos é possível ir mais longe.", "👥"]
     ]
   },
+
   desvantagens: {
     kicker: "06 / O QUE AINDA POSSO APRENDER",
     title: "Desvantagens",
@@ -78,6 +94,7 @@ const characterData = {
     ],
     note: "Observação: estas desvantagens foram criadas como sugestões iniciais para completar a ficha, pois não estavam especificadas no modelo preenchido. Você pode editar ou remover qualquer item no arquivo script.js."
   },
+
   habilidades: {
     kicker: "07 / TALENTOS ESPECIAIS",
     title: "Habilidades especiais",
@@ -91,6 +108,7 @@ const characterData = {
       ["Kit de aventura", "Carrega objetos e ferramentas úteis para suas explorações.", "🎒"]
     ]
   },
+
   passivos: {
     kicker: "08 / SEM PRECISAR ATIVAR",
     title: "Poderes passivos",
@@ -103,6 +121,7 @@ const characterData = {
       ["Olhar curioso", "Percebe detalhes que outras pessoas podem não notar.", "👁️"]
     ]
   },
+
   ativos: {
     kicker: "09 / HORA DE AGIR",
     title: "Poderes ativos",
@@ -115,6 +134,7 @@ const characterData = {
       ["Descoberta surpresa", "Encontra uma pista ou um lugar especial pelo caminho.", "⭐"]
     ]
   },
+
   historia: {
     kicker: "10 / ERA UMA VEZ…",
     title: "História da Porora",
@@ -122,6 +142,7 @@ const characterData = {
     type: "story",
     text: "Porora nasceu na pacata Vila Porong Porong, cercada por montanhas de gelo e um mar de possibilidades. Desde pequena, sempre foi diferente: enquanto outros pinguins sonhavam em ficar na vila, ela olhava para o horizonte e se perguntava o que existia além das montanhas.\n\nCom seu mapa, sua mochila e um coração enorme, Porora começou a explorar o mundo, conhecendo novos lugares, animais e culturas. Durante uma de suas viagens, descobriu que o que mais ama não é só a aventura, mas também as pessoas que encontra pelo caminho.\n\nHoje, ela continua explorando, aprendendo e colecionando histórias, sempre com um sorriso no rosto e o mesmo sonho de menina: ver tudo o que existe do mundo e fazer novas amizades pelo caminho."
   },
+
   missao: {
     kicker: "11 / MEU GRANDE OBJETIVO",
     title: "Missão principal",
@@ -129,6 +150,7 @@ const characterData = {
     type: "mission",
     text: "Explorar novos lugares, superar desafios e viver grandes aventuras ao lado dos amigos."
   },
+
   frase: {
     kicker: "12 / MINHA FRASE",
     title: "Frase da Porora",
@@ -138,53 +160,123 @@ const characterData = {
   }
 };
 
-const categoryButtons = [...document.querySelectorAll('.category-button')];
-const panelContent = document.getElementById('panel-content');
-const panelKicker = document.getElementById('panel-kicker');
-const githubLink = document.getElementById('github-link');
+const categoryButtons = [...document.querySelectorAll(".category-button")];
+const panelContent = document.getElementById("panel-content");
+const panelKicker = document.getElementById("panel-kicker");
+const githubLink = document.getElementById("github-link");
+
+const themeToggle = document.getElementById("theme-toggle");
+const themeIcon = document.getElementById("theme-icon");
+const themeLabel = document.getElementById("theme-label");
 
 function escapeHTML(value) {
   return String(value).replace(/[&<>"']/g, character => ({
-    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
   })[character]);
 }
 
 function renderIdentity(data) {
-  return `<div class="fade-in"><h3 class="panel-title">${escapeHTML(data.title)}</h3><p class="panel-intro">${escapeHTML(data.intro)}</p><dl class="identity-grid">${data.fields.map(([label, value]) => `<div class="data-item"><dt>${escapeHTML(label)}</dt><dd>${escapeHTML(value)}</dd></div>`).join('')}</dl></div>`;
+  return `<div class="fade-in">
+    <h3 class="panel-title">${escapeHTML(data.title)}</h3>
+    <p class="panel-intro">${escapeHTML(data.intro)}</p>
+    <dl class="identity-grid">
+      ${data.fields.map(([label, value]) => `
+        <div class="data-item">
+          <dt>${escapeHTML(label)}</dt>
+          <dd>${escapeHTML(value)}</dd>
+        </div>
+      `).join("")}
+    </dl>
+  </div>`;
 }
 
 function renderStats(data) {
-  return `<div class="fade-in"><h3 class="panel-title">${escapeHTML(data.title)}</h3><p class="panel-intro">${escapeHTML(data.intro)}</p><div class="stat-list">${data.items.map(([name, value, icon]) => `<div class="stat-row"><span class="stat-name">${escapeHTML(icon)} ${escapeHTML(name)}</span><div class="stat-track" role="img" aria-label="${escapeHTML(name)}: ${value} de 10"><div class="stat-fill" style="--value:${Math.max(0, Math.min(10, Number(value))) * 10}%"></div></div><span class="stat-value">${escapeHTML(value)}/10</span></div>`).join('')}</div></div>`;
+  return `<div class="fade-in">
+    <h3 class="panel-title">${escapeHTML(data.title)}</h3>
+    <p class="panel-intro">${escapeHTML(data.intro)}</p>
+    <div class="stat-list">
+      ${data.items.map(([name, value, icon]) => `
+        <div class="stat-row">
+          <span class="stat-name">${escapeHTML(icon)} ${escapeHTML(name)}</span>
+          <div class="stat-track" role="img" aria-label="${escapeHTML(name)}: ${value} de 10">
+            <div class="stat-fill" style="--value:${Math.max(0, Math.min(10, Number(value))) * 10}%"></div>
+          </div>
+          <span class="stat-value">${escapeHTML(value)}/10</span>
+        </div>
+      `).join("")}
+    </div>
+  </div>`;
 }
 
 function renderList(data) {
-  const items = data.items.map(([title, description, icon]) => `<div class="content-item"><span class="item-symbol" aria-hidden="true">${escapeHTML(icon)}</span><div><h4>${escapeHTML(title)}</h4><p>${escapeHTML(description)}</p></div></div>`).join('');
-  const note = data.note ? `<p class="panel-intro" style="margin-top:16px;font-size:11px">${escapeHTML(data.note)}</p>` : '';
-  return `<div class="fade-in"><h3 class="panel-title">${escapeHTML(data.title)}</h3><p class="panel-intro">${escapeHTML(data.intro)}</p><div class="content-list">${items}</div>${note}</div>`;
+  const items = data.items.map(([title, description, icon]) => `
+    <div class="content-item">
+      <span class="item-symbol" aria-hidden="true">${escapeHTML(icon)}</span>
+      <div>
+        <h4>${escapeHTML(title)}</h4>
+        <p>${escapeHTML(description)}</p>
+      </div>
+    </div>
+  `).join("");
+
+  const note = data.note
+    ? `<p class="panel-intro" style="margin-top:16px;font-size:11px">${escapeHTML(data.note)}</p>`
+    : "";
+
+  return `<div class="fade-in">
+    <h3 class="panel-title">${escapeHTML(data.title)}</h3>
+    <p class="panel-intro">${escapeHTML(data.intro)}</p>
+    <div class="content-list">${items}</div>
+    ${note}
+  </div>`;
 }
 
 function renderStory(data) {
-  const paragraphs = data.text.split('\n\n').map(paragraph => `<p>${escapeHTML(paragraph)}</p>`).join('');
-  return `<div class="fade-in"><h3 class="panel-title">${escapeHTML(data.title)}</h3><p class="panel-intro">${escapeHTML(data.intro)}</p><div class="story-copy">${paragraphs}</div></div>`;
+  const paragraphs = data.text
+    .split("\n\n")
+    .map(paragraph => `<p>${escapeHTML(paragraph)}</p>`)
+    .join("");
+
+  return `<div class="fade-in">
+    <h3 class="panel-title">${escapeHTML(data.title)}</h3>
+    <p class="panel-intro">${escapeHTML(data.intro)}</p>
+    <div class="story-copy">${paragraphs}</div>
+  </div>`;
 }
 
 function renderMission(data) {
-  return `<div class="fade-in"><h3 class="panel-title">${escapeHTML(data.title)}</h3><p class="panel-intro">${escapeHTML(data.intro)}</p><div class="mission-card">${escapeHTML(data.text)}</div></div>`;
+  return `<div class="fade-in">
+    <h3 class="panel-title">${escapeHTML(data.title)}</h3>
+    <p class="panel-intro">${escapeHTML(data.intro)}</p>
+    <div class="mission-card">${escapeHTML(data.text)}</div>
+  </div>`;
 }
 
 function renderQuote(data) {
-  return `<div class="fade-in"><h3 class="panel-title">${escapeHTML(data.title)}</h3><p class="panel-intro">${escapeHTML(data.intro)}</p><div class="mission-card">${escapeHTML(data.text)}</div></div>`;
+  return `<div class="fade-in">
+    <h3 class="panel-title">${escapeHTML(data.title)}</h3>
+    <p class="panel-intro">${escapeHTML(data.intro)}</p>
+    <div class="mission-card">${escapeHTML(data.text)}</div>
+  </div>`;
 }
 
 function selectCategory(key) {
   const data = characterData[key];
+
   if (!data) return;
+
   categoryButtons.forEach(button => {
     const selected = button.dataset.category === key;
-    button.classList.toggle('active', selected);
-    button.setAttribute('aria-expanded', String(selected));
+    button.classList.toggle("active", selected);
+    button.setAttribute("aria-expanded", String(selected));
   });
+
   panelKicker.textContent = data.kicker;
+
   const renderers = {
     identity: renderIdentity,
     stats: renderStats,
@@ -193,19 +285,60 @@ function selectCategory(key) {
     mission: renderMission,
     quote: renderQuote
   };
+
   panelContent.innerHTML = (renderers[data.type] || renderList)(data);
 }
 
-categoryButtons.forEach(button => button.addEventListener('click', () => selectCategory(button.dataset.category)));
+categoryButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    selectCategory(button.dataset.category);
+  });
+});
+
+
+function updateThemeButton(isDark) {
+  themeIcon.textContent = isDark ? "☀️" : "🌙";
+  themeLabel.textContent = isDark ? "Modo claro" : "Modo noturno";
+  themeToggle.setAttribute("aria-pressed", String(isDark));
+}
+
+function setTheme(isDark) {
+  document.body.classList.toggle("dark-mode", isDark);
+  updateThemeButton(isDark);
+
+  try {
+    localStorage.setItem("porora-theme", isDark ? "dark" : "light");
+  } catch (error) {
+  }
+}
+
+if (themeToggle && themeIcon && themeLabel) {
+  let savedTheme = "light";
+
+  try {
+    savedTheme = localStorage.getItem("porora-theme") || "light";
+  } catch (error) {
+  }
+
+  const startsDark = savedTheme === "dark";
+
+  document.body.classList.toggle("dark-mode", startsDark);
+  updateThemeButton(startsDark);
+
+  themeToggle.addEventListener("click", () => {
+    const isDark = !document.body.classList.contains("dark-mode");
+    setTheme(isDark);
+  });
+}
 
 if (GITHUB_REPOSITORY.trim()) {
   githubLink.href = GITHUB_REPOSITORY;
 } else {
-  githubLink.href = 'https://github.com/';
-  githubLink.addEventListener('click', event => {
+  githubLink.href = "https://github.com/";
+  githubLink.addEventListener("click", event => {
     event.preventDefault();
-    alert('Para configurar este botão, abra o arquivo script.js e coloque a URL do seu repositório na variável GITHUB_REPOSITORY.');
+    alert("Configure a URL do seu repositório na variável GITHUB_REPOSITORY do arquivo script.js.");
   });
 }
 
-selectCategory('identidade');
+selectCategory("identidade");
