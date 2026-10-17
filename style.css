@@ -1,345 +1,1090 @@
 
-const GITHUB_REPOSITORY = "https://github.com/SarahWeiser13/TrabalhoDeTecnologiaWebUnisanta-PersonagemPorora";
+:root {
+  --gold: #f0c15f;
+  --gold-deep: #dfaa3e;
+  --pink: #be8798;
+  --pink-pale: #f8edf0;
+  --blue: #b5dcff;
+  --blue-deep: #3865a7;
+  --ink: #29354a;
+  --muted: #758096;
+  --paper: #fffefa;
+  --line: #e9e5dc;
+  --shadow: 0 18px 50px rgba(50, 68, 98, .08);
+}
 
-const characterData = {
-  identidade: {
-    kicker: "01 / QUEM SOU EU",
-    title: "Identidade",
-    intro: "Toda grande aventura começa conhecendo quem está pronta para vivê-la.",
-    type: "identity",
-    fields: [
-      ["Nome", "Porora"],
-      ["Sexo", "Feminino"],
-      ["Espécie", "Pinguim"],
-      ["Classe", "Exploradora"],
-      ["Origem", "Vila Porong Porong"],
-      ["Idade", "8 anos (aprox.)"],
-      ["Personalidade", "Alegre, curiosa, corajosa, criativa, determinada e muito amiga."]
-    ]
-  },
+* {
+  box-sizing: border-box;
+}
 
-  atributos: {
-    kicker: "02 / O QUE ME MOVE",
-    title: "Atributos",
-    intro: "As características que ajudam Porora a enfrentar desafios e descobrir coisas novas.",
-    type: "stats",
-    items: [
-      ["Curiosidade", 10, "⭐"],
-      ["Coragem", 8, "💪"],
-      ["Criatividade", 9, "💡"],
-      ["Amizade", 10, "💗"],
-      ["Paciência", 7, "🌱"]
-    ]
-  },
+html {
+  scroll-behavior: smooth;
+}
 
-  pericias: {
-    kicker: "03 / O QUE SEI FAZER",
-    title: "Perícias",
-    intro: "Porora desenvolveu estas habilidades ao explorar novos lugares e trabalhar em equipe.",
-    type: "stats",
-    items: [
-      ["Exploração", 10, "🏔️"],
-      ["Navegação", 9, "🗺️"],
-      ["Observação", 9, "🔭"],
-      ["Trabalho em equipe", 10, "👥"],
-      ["Sobrevivência", 8, "🔥"],
-      ["Resolução de problemas", 9, "🧩"]
-    ]
-  },
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  transition: background .25s, color .25s;
+}
 
-  conhecimentos: {
-    kicker: "04 / O QUE JÁ DESCOBRI",
-    title: "Conhecimentos",
-    intro: "Cada passeio é uma oportunidade para aprender algo sobre o mundo ao redor.",
-    type: "stats",
-    items: [
-      ["Natureza", 9, "🌿"],
-      ["Geografia", 8, "🌎"],
-      ["Animais", 9, "🐾"],
-      ["Clima", 9, "❄️"],
-      ["Vila Porong Porong", 10, "🏡"]
-    ]
-  },
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-  vantagens: {
-    kicker: "05 / MEUS PONTOS FORTES",
-    title: "Vantagens",
-    intro: "Qualidades que fazem de Porora uma ótima companheira de aventuras.",
-    type: "list",
-    items: [
-      ["Curiosa", "Está sempre fazendo perguntas e procurando aprender.", "🧭"],
-      ["Corajosa", "Enfrenta desafios mesmo quando sente um friozinho na barriga.", "🛡️"],
-      ["Criativa", "Encontra soluções diferentes quando surge um problema.", "💡"],
-      ["Amiga dos animais", "Trata os animais com carinho e respeito.", "🐾"],
-      ["Trabalho em equipe", "Acredita que juntos é possível ir mais longe.", "👥"]
-    ]
-  },
+button {
+  font: inherit;
+}
 
-  desvantagens: {
-    kicker: "06 / O QUE AINDA POSSO APRENDER",
-    title: "Desvantagens",
-    intro: "Até uma exploradora corajosa tem desafios para superar. Estes pontos deixam a personagem mais humana e ajudam suas histórias a crescer.",
-    type: "list",
-    items: [
-      ["Curiosidade que fala mais alto", "Às vezes, Porora se empolga tanto com uma descoberta que pode se distrair do caminho principal.", "🔎"],
-      ["Impulsividade", "Quando aparece algo muito interessante, pode querer agir antes de planejar todos os passos.", "💨"],
-      ["Teimosia", "Quando acredita muito em uma ideia, pode demorar para ouvir outras opiniões ou admitir que precisa mudar de estratégia.", "🪨"],
-      ["Dificuldade em dizer não", "Por gostar muito dos amigos, pode assumir tarefas demais para tentar ajudar todo mundo.", "💗"],
-      ["Confia com facilidade", "Seu jeito acolhedor pode fazer com que confie nas pessoas antes de conhecê-las bem.", "🤝"],
-      ["Dificuldade em pedir ajuda", "Às vezes, tenta resolver tudo sozinha para não preocupar os outros, mesmo quando uma mão amiga faria diferença.", "🎒"],
-      ["Distração", "Novidades e pequenos detalhes chamam sua atenção, fazendo com que perca o foco por alguns instantes.", "🦋"],
-      ["Medo de decepcionar", "Por se importar muito com quem ama, pode cobrar demais de si mesma quando algo não sai como esperava.", "💭"],
-      ["Pouca experiência", "Ainda está aprendendo a lidar com situações realmente difíceis e pode precisar de orientação.", "🌱"],
-      ["Frio intenso", "Como qualquer aventureira, precisa se preparar bem para enfrentar condições climáticas extremas.", "❄️"]
-    ],
-    note: "Observação: estas desvantagens foram criadas como sugestões iniciais para completar a ficha, pois não estavam especificadas no modelo preenchido. Você pode editar ou remover qualquer item no arquivo script.js."
-  },
+.top-stripe {
+  height: 8px;
+  background: var(--gold);
+}
 
-  habilidades: {
-    kicker: "07 / TALENTOS ESPECIAIS",
-    title: "Habilidades especiais",
-    intro: "Recursos que ajudam Porora a explorar, se adaptar e cuidar de quem está com ela.",
-    type: "list",
-    items: [
-      ["Instinto explorador", "Encontra caminhos e descobre lugares desconhecidos.", "🧭"],
-      ["Adaptação ao gelo", "Consegue se movimentar com facilidade em ambientes de neve e gelo.", "❄️"],
-      ["Ideia brilhante", "Encontra soluções criativas quando aparece um problema.", "💡"],
-      ["Laço de amizade", "Consegue motivar e ajudar seus amigos durante uma aventura.", "💗"],
-      ["Kit de aventura", "Carrega objetos e ferramentas úteis para suas explorações.", "🎒"]
-    ]
-  },
+.site-header {
+  min-height: 86px;
+  padding: 16px clamp(20px, 6vw, 90px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  border-bottom: 1px solid rgba(190,135,152,.2);
+  background: rgba(255,254,250,.94);
+}
 
-  passivos: {
-    kicker: "08 / SEM PRECISAR ATIVAR",
-    title: "Poderes passivos",
-    intro: "Características que acompanham Porora naturalmente durante suas aventuras.",
-    type: "list",
-    items: [
-      ["Resistência ao frio", "Suporta baixas temperaturas com facilidade.", "❄️"],
-      ["Espírito aventureiro", "Está sempre buscando novos desafios.", "🏔️"],
-      ["Amizade contagiante", "Torna os arredores mais felizes e confiantes.", "💗"],
-      ["Olhar curioso", "Percebe detalhes que outras pessoas podem não notar.", "👁️"]
-    ]
-  },
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
 
-  ativos: {
-    kicker: "09 / HORA DE AGIR",
-    title: "Poderes ativos",
-    intro: "Ações especiais que Porora pode colocar em prática quando uma aventura pede iniciativa.",
-    type: "list",
-    items: [
-      ["Exploração rápida", "Move-se com agilidade para investigar novos lugares.", "🧭"],
-      ["Ideia brilhante", "Usa a criatividade para resolver um desafio importante.", "💡"],
-      ["Chamado dos amigos", "Reúne os amigos quando alguém precisa de ajuda.", "👥"],
-      ["Descoberta surpresa", "Encontra uma pista ou um lugar especial pelo caminho.", "⭐"]
-    ]
-  },
+.brand-mark {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  background: var(--blue);
+  border-radius: 15px;
+  color: var(--blue-deep);
+  font-size: 23px;
+  transform: rotate(-6deg);
+}
 
-  historia: {
-    kicker: "10 / ERA UMA VEZ…",
-    title: "História da Porora",
-    intro: "Toda exploradora tem um lugar para chamar de lar — e muitos caminhos esperando para serem descobertos.",
-    type: "story",
-    text: "Porora nasceu na pacata Vila Porong Porong, cercada por montanhas de gelo e um mar de possibilidades. Desde pequena, sempre foi diferente: enquanto outros pinguins sonhavam em ficar na vila, ela olhava para o horizonte e se perguntava o que existia além das montanhas.\n\nCom seu mapa, sua mochila e um coração enorme, Porora começou a explorar o mundo, conhecendo novos lugares, animais e culturas. Durante uma de suas viagens, descobriu que o que mais ama não é só a aventura, mas também as pessoas que encontra pelo caminho.\n\nHoje, ela continua explorando, aprendendo e colecionando histórias, sempre com um sorriso no rosto e o mesmo sonho de menina: ver tudo o que existe do mundo e fazer novas amizades pelo caminho."
-  },
+.brand strong {
+  display: block;
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -.7px;
+  color: var(--blue-deep);
+}
 
-  missao: {
-    kicker: "11 / MEU GRANDE OBJETIVO",
-    title: "Missão principal",
-    intro: "O que faz Porora calçar as botas, pegar a mochila e seguir em frente.",
-    type: "mission",
-    text: "Explorar novos lugares, superar desafios e viver grandes aventuras ao lado dos amigos."
-  },
+.brand small {
+  display: block;
+  margin-top: 5px;
+  font-size: 10px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 800;
+}
 
-  frase: {
-    kicker: "12 / MINHA FRASE",
-    title: "Frase da Porora",
-    intro: "Uma frase para lembrar que sempre existe algo novo esperando por nós.",
-    type: "quote",
-    text: "Vamos descobrir o que existe por aí!"
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 17px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 800;
+  transition: transform .2s, background .2s, box-shadow .2s;
+}
+
+.header-link:hover {
+  transform: translateY(-2px);
+}
+
+.theme-toggle {
+  border: 1px solid #e7dfcf;
+  cursor: pointer;
+  background: #fff8e9;
+  color: #6c5528;
+}
+
+.theme-toggle:hover {
+  background: #ffefc9;
+}
+
+.contact-link {
+  background: var(--pink-pale);
+  color: #89596a;
+}
+
+.contact-link:hover {
+  background: #f2dfe5;
+}
+
+.github-link {
+  background: var(--gold);
+  color: #42351c;
+  box-shadow: 0 5px 0 #e5b24e;
+}
+
+.github-link:hover {
+  background: #f5cc78;
+  box-shadow: 0 7px 0 #e5b24e;
+}
+
+.header-link:focus-visible,
+.category-button:focus-visible {
+  outline: 3px solid #7ab8f0;
+  outline-offset: 3px;
+}
+
+.interactive-section {
+  padding: 34px clamp(16px, 4vw, 64px) 70px;
+  background: linear-gradient(180deg, #fffefa 0%, #fff 70%);
+}
+
+.intro-heading {
+  text-align: center;
+  margin: 0 auto 22px;
+  max-width: 760px;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2.4px;
+  color: var(--pink);
+}
+
+.eyebrow span {
+  display: inline-block;
+  width: 22px;
+  height: 2px;
+  background: var(--gold);
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.intro-heading .eyebrow {
+  margin-bottom: 10px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(34px, 4.2vw, 54px);
+  letter-spacing: -2.5px;
+  line-height: 1.04;
+  font-weight: 900;
+  color: var(--ink);
+}
+
+h1 em {
+  color: var(--blue-deep);
+  font-style: normal;
+}
+
+.intro-heading > p:last-child {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.orbit-layout {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(190px, 1fr) minmax(260px, 350px) minmax(190px, 1fr);
+  grid-template-rows: repeat(6, minmax(48px, auto));
+  align-items: center;
+  column-gap: clamp(14px, 3vw, 48px);
+  row-gap: 10px;
+  position: relative;
+}
+
+.category-list {
+  display: contents;
+}
+
+.category-button {
+  min-height: 48px;
+  width: 100%;
+  padding: 9px 13px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  border: 1px solid rgba(240,193,95,.55);
+  border-radius: 999px;
+  background: var(--gold);
+  color: #493a1e;
+  font-size: 12px;
+  font-weight: 900;
+  box-shadow: 0 4px 0 rgba(222,170,62,.12);
+  cursor: pointer;
+  transition: transform .2s, background .2s, box-shadow .2s, border-color .2s;
+}
+
+.category-button:nth-child(-n+6) {
+  grid-column: 1;
+}
+
+.category-button:nth-child(n+7) {
+  grid-column: 3;
+}
+
+.category-button:nth-child(1),
+.category-button:nth-child(7) {
+  grid-row: 1;
+}
+
+.category-button:nth-child(2),
+.category-button:nth-child(8) {
+  grid-row: 2;
+}
+
+.category-button:nth-child(3),
+.category-button:nth-child(9) {
+  grid-row: 3;
+}
+
+.category-button:nth-child(4),
+.category-button:nth-child(10) {
+  grid-row: 4;
+}
+
+.category-button:nth-child(5),
+.category-button:nth-child(11) {
+  grid-row: 5;
+}
+
+.category-button:nth-child(6),
+.category-button:nth-child(12) {
+  grid-row: 6;
+}
+
+.category-button:nth-child(n+7) {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.category-button:hover {
+  background: #f8d88d;
+  color: #493a1e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 rgba(222,170,62,.17);
+}
+
+.category-button.active {
+  background: var(--pink);
+  color: #fff;
+  border-color: var(--pink);
+  box-shadow: 0 5px 0 rgba(190,135,152,.22);
+}
+
+.category-button.active .category-icon {
+  background: rgba(255,255,255,.95);
+}
+
+.category-icon {
+  flex: 0 0 29px;
+  width: 29px;
+  height: 29px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,.78);
+  border-radius: 50%;
+  font-size: 14px;
+}
+
+.category-button > span:nth-child(2) {
+  flex: 1;
+}
+
+.category-arrow {
+  opacity: .65;
+  font-size: 14px;
+}
+
+.character-stage {
+  grid-column: 2;
+  grid-row: 1 / 7;
+  min-height: 400px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+
+.character-halo {
+  position: absolute;
+  width: min(320px, 100%);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, #c8e5ff 0%, #d8edff 56%, rgba(213,235,255,.12) 72%);
+}
+
+.character-image {
+  position: relative;
+  z-index: 1;
+  width: min(310px, 100%);
+  max-height: 390px;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 12px rgba(56,101,167,.12));
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+.orbit {
+  position: absolute;
+  border: 1px dashed rgba(56,101,167,.28);
+  border-radius: 50%;
+  width: 110%;
+  height: 63%;
+  transform: rotate(-25deg);
+}
+
+.orbit-two {
+  width: 86%;
+  height: 92%;
+  transform: rotate(25deg);
+  border-color: rgba(190,135,152,.28);
+}
+
+.sparkle {
+  position: absolute;
+  z-index: 2;
+  color: var(--gold-deep);
+  font-size: 25px;
+}
+
+.sparkle-one {
+  top: 13%;
+  right: 18%;
+}
+
+.sparkle-two {
+  left: 8%;
+  top: 32%;
+  color: #8fc8f4;
+}
+
+.sparkle-three {
+  bottom: 18%;
+  right: 12%;
+  color: var(--pink);
+  font-size: 31px;
+}
+
+.character-label {
+  z-index: 2;
+  position: absolute;
+  bottom: 1px;
+  padding: 9px 15px;
+  border-radius: 99px;
+  background: white;
+  box-shadow: var(--shadow);
+  font-size: 11px;
+  font-weight: 800;
+  color: #68748a;
+  white-space: nowrap;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: #7fc8a5;
+}
+
+.info-section {
+  max-width: 930px;
+  margin: 32px auto 0;
+  scroll-margin-top: 20px;
+}
+
+.info-panel {
+  min-height: 210px;
+  padding: clamp(22px, 4vw, 40px);
+  background: #fffefa;
+  border: 1px solid #eee9df;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.info-panel::before {
+  content: '';
+  position: absolute;
+  right: -45px;
+  top: -55px;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: rgba(181,220,255,.19);
+}
+
+.panel-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 19px;
+  border-bottom: 1px solid var(--line);
+}
+
+.panel-kicker {
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 900;
+  color: var(--pink);
+}
+
+.panel-snowflake {
+  color: var(--gold-deep);
+  font-size: 25px;
+}
+
+.panel-title {
+  position: relative;
+  margin: 25px 0 8px;
+  font-size: clamp(25px, 3vw, 35px);
+  letter-spacing: -1px;
+  font-weight: 900;
+}
+
+.panel-intro {
+  position: relative;
+  max-width: 650px;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 14px;
+  margin: 0 0 24px;
+}
+
+.identity-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  position: relative;
+}
+
+.data-item {
+  padding: 13px 15px;
+  background: #fff;
+  border: 1px solid #eee9df;
+  border-radius: 14px;
+  min-width: 0;
+}
+
+.data-item dt {
+  margin-bottom: 5px;
+  color: #9a9faf;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.data-item dd {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.stat-list {
+  display: grid;
+  gap: 18px;
+  position: relative;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: minmax(110px, 1fr) minmax(80px, 2fr) 44px;
+  align-items: center;
+  gap: 14px;
+}
+
+.stat-name {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.stat-value {
+  font-size: 12px;
+  font-weight: 900;
+  color: var(--blue-deep);
+  text-align: right;
+}
+
+.stat-track {
+  height: 9px;
+  background: #e9f2fb;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.stat-fill {
+  height: 100%;
+  width: var(--value);
+  border-radius: inherit;
+  background: linear-gradient(90deg, #80c8f2, #3b86c7);
+}
+
+.content-list {
+  display: grid;
+  gap: 11px;
+  position: relative;
+}
+
+.content-item {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+  padding: 14px 15px;
+  border: 1px solid #eee9df;
+  border-radius: 15px;
+  background: #fff;
+}
+
+.item-symbol {
+  flex: 0 0 35px;
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--pink-pale);
+  font-size: 17px;
+}
+
+.content-item h4 {
+  margin: 1px 0 4px;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.content-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.story-copy {
+  position: relative;
+  font-size: 14px;
+  line-height: 1.95;
+  color: #69758a;
+  max-width: 760px;
+}
+
+.mission-card {
+  position: relative;
+  padding: 25px;
+  background: #fff5d9;
+  border-radius: 17px;
+  color: #66522c;
+  font-size: clamp(17px, 2vw, 22px);
+  font-weight: 900;
+  line-height: 1.6;
+}
+
+.mission-card::before {
+  content: '“';
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  font-size: 52px;
+  color: #e2b64f;
+  opacity: .65;
+}
+
+.fade-in {
+  animation: reveal .32s ease both;
+}
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(7px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 28px clamp(20px, 7vw, 105px);
+  background: #f8f5ef;
+  border-top: 1px solid #eee8dc;
+  flex-wrap: wrap;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--blue-deep);
+  font-size: 20px;
+}
+
+.footer-star {
+  color: var(--gold-deep);
+  font-size: 24px;
+}
+
+.site-footer small {
+  color: #8d94a2;
+  font-size: 10px;
+}
+
+.bottom-stripe {
+  height: 7px;
+  background: var(--gold);
+}
+
+body.dark-mode {
+  --gold: #c4a35a;
+  --gold-deep: #e0bc70;
+  --pink: #bc8b9e;
+  --pink-pale: #3a2b37;
+  --blue: #344760;
+  --blue-deep: #a9ceff;
+  --ink: #edf1fa;
+  --muted: #b6c0d2;
+  --paper: #171c27;
+  --line: #3a4353;
+  --shadow: 0 18px 50px rgba(0, 0, 0, .22);
+
+  color: var(--ink);
+  background: var(--paper);
+}
+
+body.dark-mode .site-header {
+  background: #202735;
+  border-bottom-color: #394253;
+}
+
+body.dark-mode .brand-mark {
+  background: #344760;
+  color: #c5dfff;
+}
+
+body.dark-mode .brand strong,
+body.dark-mode .footer-brand {
+  color: #c5dfff;
+}
+
+body.dark-mode .brand small {
+  color: #b6c0d2;
+}
+
+body.dark-mode .theme-toggle {
+  background: #354154;
+  border-color: #4b5870;
+  color: #ffe2a0;
+}
+
+body.dark-mode .theme-toggle:hover {
+  background: #43516a;
+}
+
+body.dark-mode .contact-link {
+  background: #3a2b37;
+  color: #f0cad9;
+}
+
+body.dark-mode .contact-link:hover {
+  background: #4a3545;
+}
+
+body.dark-mode .github-link {
+  background: #594a2d;
+  color: #fff0c7;
+  box-shadow: 0 5px 0 #403722;
+}
+
+body.dark-mode .github-link:hover {
+  background: #6b5936;
+  box-shadow: 0 7px 0 #403722;
+}
+
+body.dark-mode .interactive-section {
+  background: linear-gradient(180deg, #171c27 0%, #1c2330 70%);
+}
+
+body.dark-mode h1,
+body.dark-mode .panel-title {
+  color: var(--ink);
+}
+
+body.dark-mode h1 em {
+  color: #a9ceff;
+}
+
+body.dark-mode .intro-heading > p:last-child,
+body.dark-mode .panel-intro {
+  color: var(--muted);
+}
+
+body.dark-mode .character-halo {
+  background: radial-gradient(circle, #344c68 0%, #293b52 56%, rgba(41,59,82,.12) 72%);
+}
+
+body.dark-mode .orbit {
+  border-color: rgba(169,206,255,.3);
+}
+
+body.dark-mode .orbit-two {
+  border-color: rgba(188,139,158,.4);
+}
+
+body.dark-mode .character-label {
+  background: #293344;
+  color: #e1e8f4;
+}
+
+body.dark-mode .category-button {
+  background: #383449;
+  border-color: #57465a;
+  color: #f2e7ed;
+  box-shadow: 0 4px 0 rgba(0,0,0,.12);
+}
+
+body.dark-mode .category-button:hover {
+  background: #4a4057;
+  color: #fff;
+}
+
+body.dark-mode .category-button.active {
+  background: #9d6d83;
+  border-color: #b28298;
+  color: #fff;
+}
+
+body.dark-mode .category-icon {
+  background: #252e3d;
+}
+
+body.dark-mode .info-panel {
+  background: #222a38;
+  border-color: #394354;
+}
+
+body.dark-mode .info-panel::before {
+  background: rgba(113,158,209,.1);
+}
+
+body.dark-mode .panel-topline {
+  border-bottom-color: var(--line);
+}
+
+body.dark-mode .data-item,
+body.dark-mode .content-item {
+  background: #293242;
+  border-color: #3b4659;
+  color: var(--ink);
+}
+
+body.dark-mode .data-item dt {
+  color: #aab5c8;
+}
+
+body.dark-mode .data-item dd {
+  color: #edf1fa;
+}
+
+body.dark-mode .stat-track {
+  background: #39485b;
+}
+
+body.dark-mode .stat-fill {
+  background: linear-gradient(90deg, #91c9f0, #568dc6);
+}
+
+body.dark-mode .stat-value {
+  color: #a9ceff;
+}
+
+body.dark-mode .content-item p,
+body.dark-mode .story-copy {
+  color: #c0c9d9;
+}
+
+body.dark-mode .item-symbol {
+  background: #3a2b37;
+}
+
+body.dark-mode .mission-card {
+  background: #3d3628;
+  color: #ffebba;
+}
+
+body.dark-mode .mission-card::before {
+  color: #e0bc70;
+}
+
+body.dark-mode .site-footer {
+  background: #202735;
+  border-top-color: #394253;
+}
+
+body.dark-mode .site-footer small {
+  color: #b6c0d2;
+}
+
+body.dark-mode .top-stripe,
+body.dark-mode .bottom-stripe {
+  background: #c4a35a;
+}
+
+@media (max-width: 950px) {
+  .interactive-section {
+    padding-inline: 4vw;
   }
-};
 
-const categoryButtons = [...document.querySelectorAll(".category-button")];
-const panelContent = document.getElementById("panel-content");
-const panelKicker = document.getElementById("panel-kicker");
-const githubLink = document.getElementById("github-link");
+  .orbit-layout {
+    grid-template-columns: minmax(0,1fr) minmax(190px,.9fr) minmax(0,1fr);
+    column-gap: 10px;
+    row-gap: 9px;
+  }
 
-const themeToggle = document.getElementById("theme-toggle");
-const themeIcon = document.getElementById("theme-icon");
-const themeLabel = document.getElementById("theme-label");
+  .category-button {
+    min-height: 46px;
+    padding: 7px 9px;
+    gap: 6px;
+    font-size: 10px;
+  }
 
-function escapeHTML(value) {
-  return String(value).replace(/[&<>"']/g, character => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#39;"
-  })[character]);
-}
+  .category-icon {
+    flex-basis: 25px;
+    width: 25px;
+    height: 25px;
+    font-size: 12px;
+  }
 
-function renderIdentity(data) {
-  return `<div class="fade-in">
-    <h3 class="panel-title">${escapeHTML(data.title)}</h3>
-    <p class="panel-intro">${escapeHTML(data.intro)}</p>
-    <dl class="identity-grid">
-      ${data.fields.map(([label, value]) => `
-        <div class="data-item">
-          <dt>${escapeHTML(label)}</dt>
-          <dd>${escapeHTML(value)}</dd>
-        </div>
-      `).join("")}
-    </dl>
-  </div>`;
-}
+  .category-arrow {
+    display: none;
+  }
 
-function renderStats(data) {
-  return `<div class="fade-in">
-    <h3 class="panel-title">${escapeHTML(data.title)}</h3>
-    <p class="panel-intro">${escapeHTML(data.intro)}</p>
-    <div class="stat-list">
-      ${data.items.map(([name, value, icon]) => `
-        <div class="stat-row">
-          <span class="stat-name">${escapeHTML(icon)} ${escapeHTML(name)}</span>
-          <div class="stat-track" role="img" aria-label="${escapeHTML(name)}: ${value} de 10">
-            <div class="stat-fill" style="--value:${Math.max(0, Math.min(10, Number(value))) * 10}%"></div>
-          </div>
-          <span class="stat-value">${escapeHTML(value)}/10</span>
-        </div>
-      `).join("")}
-    </div>
-  </div>`;
-}
+  .character-stage {
+    min-height: 350px;
+  }
 
-function renderList(data) {
-  const items = data.items.map(([title, description, icon]) => `
-    <div class="content-item">
-      <span class="item-symbol" aria-hidden="true">${escapeHTML(icon)}</span>
-      <div>
-        <h4>${escapeHTML(title)}</h4>
-        <p>${escapeHTML(description)}</p>
-      </div>
-    </div>
-  `).join("");
-
-  const note = data.note
-    ? `<p class="panel-intro" style="margin-top:16px;font-size:11px">${escapeHTML(data.note)}</p>`
-    : "";
-
-  return `<div class="fade-in">
-    <h3 class="panel-title">${escapeHTML(data.title)}</h3>
-    <p class="panel-intro">${escapeHTML(data.intro)}</p>
-    <div class="content-list">${items}</div>
-    ${note}
-  </div>`;
-}
-
-function renderStory(data) {
-  const paragraphs = data.text
-    .split("\n\n")
-    .map(paragraph => `<p>${escapeHTML(paragraph)}</p>`)
-    .join("");
-
-  return `<div class="fade-in">
-    <h3 class="panel-title">${escapeHTML(data.title)}</h3>
-    <p class="panel-intro">${escapeHTML(data.intro)}</p>
-    <div class="story-copy">${paragraphs}</div>
-  </div>`;
-}
-
-function renderMission(data) {
-  return `<div class="fade-in">
-    <h3 class="panel-title">${escapeHTML(data.title)}</h3>
-    <p class="panel-intro">${escapeHTML(data.intro)}</p>
-    <div class="mission-card">${escapeHTML(data.text)}</div>
-  </div>`;
-}
-
-function renderQuote(data) {
-  return `<div class="fade-in">
-    <h3 class="panel-title">${escapeHTML(data.title)}</h3>
-    <p class="panel-intro">${escapeHTML(data.intro)}</p>
-    <div class="mission-card">${escapeHTML(data.text)}</div>
-  </div>`;
-}
-
-function selectCategory(key) {
-  const data = characterData[key];
-
-  if (!data) return;
-
-  categoryButtons.forEach(button => {
-    const selected = button.dataset.category === key;
-    button.classList.toggle("active", selected);
-    button.setAttribute("aria-expanded", String(selected));
-  });
-
-  panelKicker.textContent = data.kicker;
-
-  const renderers = {
-    identity: renderIdentity,
-    stats: renderStats,
-    list: renderList,
-    story: renderStory,
-    mission: renderMission,
-    quote: renderQuote
-  };
-
-  panelContent.innerHTML = (renderers[data.type] || renderList)(data);
-}
-
-categoryButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    selectCategory(button.dataset.category);
-  });
-});
-
-function updateThemeButton(isDark) {
-  themeIcon.textContent = isDark ? "☀️" : "🌙";
-  themeLabel.textContent = isDark ? "Modo claro" : "Modo noturno";
-  themeToggle.setAttribute("aria-pressed", String(isDark));
-}
-
-function setTheme(isDark) {
-  document.body.classList.toggle("dark-mode", isDark);
-  updateThemeButton(isDark);
-
-  try {
-    localStorage.setItem("porora-theme", isDark ? "dark" : "light");
-  } catch (error) {
-    // O tema continua funcionando mesmo se o navegador bloquear o armazenamento.
+  .character-image {
+    max-height: 310px;
   }
 }
 
-if (themeToggle && themeIcon && themeLabel) {
-  let savedTheme = "light";
-
-  try {
-    savedTheme = localStorage.getItem("porora-theme") || "light";
-  } catch (error) {
-    // Se o armazenamento estiver indisponível, o site começa no tema claro.
+@media (max-width: 600px) {
+  .site-header {
+    align-items: center;
+    padding: 12px 14px;
+    gap: 10px;
   }
 
-  const startsDark = savedTheme === "dark";
+  .header-actions {
+    gap: 6px;
+    flex-direction: column;
+    align-items: stretch;
+  }
 
-  document.body.classList.toggle("dark-mode", startsDark);
-  updateThemeButton(startsDark);
+  .header-link {
+    padding: 8px 10px;
+    font-size: 10px;
+  }
 
-  themeToggle.addEventListener("click", () => {
-    const isDark = !document.body.classList.contains("dark-mode");
-    setTheme(isDark);
-  });
+  .brand-mark {
+    width: 34px;
+    height: 34px;
+  }
+
+  .brand {
+    gap: 7px;
+  }
+
+  .brand strong {
+    font-size: 20px;
+  }
+
+  .brand small {
+    font-size: 7px;
+    letter-spacing: .7px;
+  }
+
+  .intro-heading {
+    margin-bottom: 18px;
+  }
+
+  .intro-heading h1 {
+    letter-spacing: -1.5px;
+  }
+
+  .intro-heading > p:last-child {
+    font-size: 12px;
+  }
+
+  .orbit-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+  }
+
+  .character-stage {
+    order: 0;
+    width: 100%;
+    min-height: 285px;
+  }
+
+  .character-image {
+    width: min(245px, 70vw);
+    max-height: 280px;
+  }
+
+  .character-halo {
+    width: min(245px, 70vw);
+  }
+
+  .orbit {
+    width: min(300px, 85vw);
+    height: 175px;
+  }
+
+  .orbit-two {
+    width: min(235px, 72vw);
+    height: 265px;
+  }
+
+  .character-label {
+    bottom: 0;
+    font-size: 10px;
+  }
+
+  .category-list {
+    display: grid;
+    order: 1;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 7px;
+    width: 100%;
+  }
+
+  .category-button,
+  .category-button:nth-child(n) {
+    grid-column: auto;
+    grid-row: auto;
+    flex-direction: row;
+    text-align: left;
+    min-height: 48px;
+    border-radius: 16px;
+    padding: 7px 9px;
+    font-size: 10px;
+  }
+
+  .category-button:nth-child(n+7) {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .category-icon {
+    flex-basis: 25px;
+    width: 25px;
+    height: 25px;
+  }
+
+  .info-section {
+    order: 2;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .info-panel {
+    padding: 22px 16px;
+    min-height: 220px;
+  }
+
+  .identity-grid {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+
+  .stat-row {
+    grid-template-columns: minmax(90px,1fr) minmax(45px,1.5fr) 34px;
+    gap: 7px;
+  }
+
+  .stat-name {
+    font-size: 10px;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 9px;
+    padding: 24px 15px;
+  }
 }
 
-if (GITHUB_REPOSITORY.trim()) {
-  githubLink.href = GITHUB_REPOSITORY;
-} else {
-  githubLink.href = "https://github.com/";
-  githubLink.addEventListener("click", event => {
-    event.preventDefault();
-    alert("Configure a URL do seu repositório na variável GITHUB_REPOSITORY do arquivo script.js.");
-  });
+@media (max-width: 390px) {
+  .brand small {
+    display: none;
+  }
+
+  .header-link span {
+    max-width: 100px;
+  }
+
+  .identity-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-row {
+    grid-template-columns: 88px minmax(40px,1fr) 34px;
+  }
+
+  .category-button,
+  .category-button:nth-child(n) {
+    font-size: 9px;
+    gap: 5px;
+    padding-inline: 6px;
+  }
+
+  .category-icon {
+    flex-basis: 22px;
+    width: 22px;
+    height: 22px;
+    font-size: 11px;
+  }
 }
 
-selectCategory("identidade");
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
