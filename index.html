@@ -11,11 +11,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./style.css">
   <script src="./script.js" defer></script>
@@ -34,6 +30,16 @@
     </a>
 
     <nav class="header-actions" aria-label="Links principais">
+      <button
+        class="header-link theme-toggle"
+        id="theme-toggle"
+        type="button"
+        aria-pressed="false"
+      >
+        <span id="theme-icon" aria-hidden="true">🌙</span>
+        <span id="theme-label">Modo noturno</span>
+      </button>
+
       <a class="header-link contact-link" href="mailto:aweisersarah@gmail.com">
         ✉ <span>Nos contate</span>
       </a>
@@ -74,119 +80,80 @@
           id="category-list"
           aria-label="Categorias da ficha"
         >
-
-          <button class="category-button active"
-            data-category="identidade"
-            aria-expanded="true"
-            aria-controls="info-panel">
+          <button class="category-button active" data-category="identidade" aria-expanded="true" aria-controls="info-panel">
             <span class="category-icon">🪪</span>
             <span>Identidade</span>
             <span class="category-arrow">↗</span>
           </button>
 
-          <button class="category-button"
-            data-category="atributos"
-            aria-expanded="false"
-            aria-controls="info-panel">
+          <button class="category-button" data-category="atributos" aria-expanded="false" aria-controls="info-panel">
             <span class="category-icon">⭐</span>
             <span>Atributos</span>
             <span class="category-arrow">↗</span>
           </button>
 
-          <button class="category-button"
-            data-category="pericias"
-            aria-expanded="false"
-            aria-controls="info-panel">
+          <button class="category-button" data-category="pericias" aria-expanded="false" aria-controls="info-panel">
             <span class="category-icon">🧭</span>
             <span>Perícias</span>
             <span class="category-arrow">↗</span>
           </button>
 
-          <button class="category-button"
-            data-category="conhecimentos"
-            aria-expanded="false"
-            aria-controls="info-panel">
+          <button class="category-button" data-category="conhecimentos" aria-expanded="false" aria-controls="info-panel">
             <span class="category-icon">📚</span>
             <span>Conhecimentos</span>
             <span class="category-arrow">↗</span>
           </button>
 
-          <button class="category-button"
-            data-category="vantagens"
-            aria-expanded="false"
-            aria-controls="info-panel">
+          <button class="category-button" data-category="vantagens" aria-expanded="false" aria-controls="info-panel">
             <span class="category-icon">💛</span>
             <span>Vantagens</span>
             <span class="category-arrow">↗</span>
           </button>
 
-          <button class="category-button"
-            data-category="desvantagens"
-            aria-expanded="false"
-            aria-controls="info-panel">
+          <button class="category-button" data-category="desvantagens" aria-expanded="false" aria-controls="info-panel">
             <span class="category-icon">🌨️</span>
             <span>Desvantagens</span>
             <span class="category-arrow">↗</span>
           </button>
 
-          <button class="category-button"
-            data-category="habilidades"
-            aria-expanded="false"
-            aria-controls="info-panel">
+          <button class="category-button" data-category="habilidades" aria-expanded="false" aria-controls="info-panel">
             <span class="category-icon">🏔️</span>
             <span>Habilidades especiais</span>
             <span class="category-arrow">↗</span>
           </button>
 
-          <button class="category-button"
-            data-category="passivos"
-            aria-expanded="false"
-            aria-controls="info-panel">
+          <button class="category-button" data-category="passivos" aria-expanded="false" aria-controls="info-panel">
             <span class="category-icon">❄️</span>
             <span>Poderes passivos</span>
             <span class="category-arrow">↗</span>
           </button>
 
-          <button class="category-button"
-            data-category="ativos"
-            aria-expanded="false"
-            aria-controls="info-panel">
+          <button class="category-button" data-category="ativos" aria-expanded="false" aria-controls="info-panel">
             <span class="category-icon">⚡</span>
             <span>Poderes ativos</span>
             <span class="category-arrow">↗</span>
           </button>
 
-          <button class="category-button"
-            data-category="historia"
-            aria-expanded="false"
-            aria-controls="info-panel">
+          <button class="category-button" data-category="historia" aria-expanded="false" aria-controls="info-panel">
             <span class="category-icon">📖</span>
             <span>História</span>
             <span class="category-arrow">↗</span>
           </button>
 
-          <button class="category-button"
-            data-category="missao"
-            aria-expanded="false"
-            aria-controls="info-panel">
+          <button class="category-button" data-category="missao" aria-expanded="false" aria-controls="info-panel">
             <span class="category-icon">🚩</span>
             <span>Missão principal</span>
             <span class="category-arrow">↗</span>
           </button>
 
-          <button class="category-button"
-            data-category="frase"
-            aria-expanded="false"
-            aria-controls="info-panel">
+          <button class="category-button" data-category="frase" aria-expanded="false" aria-controls="info-panel">
             <span class="category-icon">💬</span>
             <span>Frase da Porora</span>
             <span class="category-arrow">↗</span>
           </button>
-
         </div>
 
         <div class="character-stage" aria-label="Porora no centro da ficha">
-
           <div class="orbit orbit-one"></div>
           <div class="orbit orbit-two"></div>
 
@@ -196,10 +163,9 @@
 
           <div class="character-halo"></div>
 
-          <!-- Imagem da Porora -->
           <img
             class="character-image"
-            src="./assets/porora.jpeg"
+            src="./assets/porora.png"
             alt="Porora, a personagem da ficha"
           >
 
@@ -207,52 +173,31 @@
             <span class="status-dot"></span>
             Escolha uma categoria!
           </div>
-
         </div>
       </div>
 
-      <section
-        class="info-section"
-        aria-label="Informações da categoria selecionada"
-      >
-
-        <div
-          class="info-panel"
-          id="info-panel"
-          aria-live="polite"
-          aria-atomic="true"
-        >
-
+      <section class="info-section" aria-label="Informações da categoria selecionada">
+        <div class="info-panel" id="info-panel" aria-live="polite" aria-atomic="true">
           <div class="panel-topline">
-            <span class="panel-kicker" id="panel-kicker">
-              01 / QUEM SOU EU
-            </span>
-
+            <span class="panel-kicker" id="panel-kicker">01 / QUEM SOU EU</span>
             <span class="panel-snowflake">✳</span>
           </div>
 
           <div id="panel-content"></div>
-
         </div>
-
       </section>
     </section>
   </main>
 
   <footer class="site-footer">
-
     <div class="footer-brand">
       <span class="footer-star">✳</span>
       <strong>Porora</strong>
     </div>
 
-    <small>
-      © 2026 Porora — Todos os direitos reservados.
-    </small>
-
+    <small>© 2026 Porora — Todos os direitos reservados.</small>
   </footer>
 
   <div class="bottom-stripe"></div>
-
 </body>
 </html>
